@@ -1,0 +1,9 @@
+task :build do
+  sh "gem build vectors.gemspec"
+end
+
+task install: "build" do
+  sh "gem install ./vectors-0.0.0.gem"
+end
+
+task :default => [:install]
